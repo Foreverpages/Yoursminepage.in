@@ -362,6 +362,7 @@
       </div>
 
       <button class="preview-btn" id="previewBtn">✨ Preview Your Page</button>
+      <p style="text-align: center; margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted);">Created with ❤️ by <strong>Aryan</strong> (BCA-A)</p>
     </div>
   </div>
 
@@ -455,12 +456,13 @@
 
     const COUPONS = {
       FOREVER:   { discount:49, label:"FREE — it's on us! 💕" },
-      YOURS:    { discount:39, label:'RS10 — just ₹10! 🥺 (Limited: Expire 25 Sep)' },
+      YOURS:    { discount:39, label:'RS10 — just ₹10! 🥺 (Limited: Expire 29 Sep)' },
       MINE:      { discount:28, label:'RS21 — ₹28 off' },
+      QN:      { discount:48, label:'RS1 — ₹48 off' },
     };
 
-    // YOURS Coupon Expiry Date set to 25 September 2026
-    const YOURS_EXPIRY_DATE = new Date('2026-09-25T23:59:59');
+    // YOURS Coupon Expiry Date set to 29 September 2026
+    const YOURS_EXPIRY_DATE = new Date('2026-09-29T23:59:59');
 
     const formPage = document.getElementById('formPage');
     const expPage = document.getElementById('expPage');
@@ -548,7 +550,7 @@
       // Check if YOURS coupon is expired
       if (code === 'YOURS' && new Date() > YOURS_EXPIRY_DATE) {
         appliedDiscount = 0;
-        msg.textContent = '✗ Coupon "YOURS" expired on 25 Sep 2026!';
+        msg.textContent = '✗ Coupon "YOURS" expired on 29 Sep 2026!';
         msg.className = 'coupon-msg err';
         payBtn.textContent = 'Pay ₹49 & Get Link 💕';
         return;
